@@ -1,0 +1,35 @@
+
+<img src="assets/customer.jpg" style="height: 200px; width:102%"> 
+<hr/>
+          <table class="table table-bordered" style="margin-left: 20px;top: auto;">
+            <thead>
+              <tr>
+                <th>SNO</th> 
+                <th>Name</th>
+                <th>Color</th>
+                <th>Photo</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let customer of ccustomer;let i=index;">
+                <td>{{i+1}}</td>
+                <td>{{customer.name}}</td>
+                <td>{{customer.color}}</td>
+                <td><img src="{{customer.photo}}" style="height: 100px;"> </td>
+                <td style="width: 200px;"> <a [routerLink]="['/ecustomer',customer.cid]">
+                        <button type="button"  class="btn btn-primary">Edit</button>
+                     </a>
+                      &nbsp;  
+                      <button type="button" (click)="deleteCustomer(customer);"  class="btn btn-danger">Delete</button>
+                   
+                </td>
+              </tr>
+            
+            </tbody>
+          </table>
+          <div style="margin-left: 20px;">
+          <input type="text" [(ngModel)]="tname"  name="tname" class="form-control" style="font-weight: bold;">
+        <hr/>
+          <button type="button" (click)="pushMessage();"  class="btn btn-danger">Push Message</button>
+        </div>

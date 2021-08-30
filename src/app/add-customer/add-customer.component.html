@@ -1,0 +1,23 @@
+<span style="color:red;font-size: 20px;">{{message}}</span>
+<div style="margin-left:20px;">
+    <h3 style="background-color: rgb(59, 84, 196);">Add CustomerForm</h3>
+    <img src="assets/customer.jpg" style="height: 200px;"> 
+<div class="form-group">
+     <label>Name</label>
+     <input [(ngModel)]="customer.name" name="name" class="form-control"/> 
+</div>
+
+<div class="form-group">
+    <label>Color</label>
+    <input [(ngModel)]="customer.color" name="color" class="form-control"/> 
+</div>
+<div class="form-group">
+    <label>Photo</label>
+    <input [(ngModel)]="customer.photo" name="photo" class="form-control"/> 
+</div>
+
+<div class="form-group">
+    <button (click)="addCustomer();" class="btn btn-danger">Add Customer! </button>
+</div>
+
+</div>

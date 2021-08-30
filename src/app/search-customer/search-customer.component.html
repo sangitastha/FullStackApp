@@ -1,0 +1,39 @@
+
+
+<div style="margin-left: 30px;margin-top: 30px;">
+    <h2>Search Customer!</h2>
+    <hr/>
+    <img src="assets/customer.jpg" style="height: 50px;">
+    <img src="assets/customer.jpg" style="height: 50px;">
+    <img src="assets/customer.jpg" style="height: 50px;">
+    <img src="assets/customer.jpg" style="height: 50px;">
+    <br/>
+  <label style="font-size: 20px;">Search Customer</label>
+  <input (keyup)="showHide=false;"  [(ngModel)]="search" type="text" name="search" class="form-control"/>
+  <br/>
+  <button (click)="searchCustomer();" type="button" class="btn btn-danger">GO!</button>
+  <hr/>
+  <div *ngIf="showHide">
+  <h2>Customer search result!!</h2>
+  <table class="table table-bordered" style="margin-left: 20px;top: auto;">
+    <thead>
+      <tr>
+        <th>SNO</th> 
+        <th>Name</th>
+        <th>Color</th>
+        <th>Photo</th>
+        <th>DOB</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of ccustomer;let i=index;">
+        <td>{{i+1}}</td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.color}}</td>
+        <td><img src="{{customer.photo}}" style="height: 140px;"> </td>
+        <td>{{customer.dob}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
